@@ -15,7 +15,7 @@ const JobSchema = new mongoose.Schema(
     rejected:{type:String, default:"None"}
     ,company: String,
     position: String,
-    payment:String,
+    payment:{type:String, default:"none"},
     passportNo:String,
     VisaStatus:String,
     jobStatus: {

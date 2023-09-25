@@ -58,13 +58,13 @@ route.post('/login',  async(req, res)=>{
                 });
                 res.status(StatusCodes.OK).json({ msg: 'user logged in' });
             }else{
-                res.status(StatusCodes.NOT_FOUND).json({msg:"There is no user with this email"})
+                res.status(StatusCodes.NOT_FOUND).json({msg:"You entered incorrect password. Please try again."})
             }
         }else{
-            res.status(StatusCodes.NOT_FOUND).json({msg:"There is no user with this email"})
+            res.status(StatusCodes.NOT_FOUND).json({msg:"There is no user with that email address."})
         }
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:"There is some problem on server side. Please try again"})
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:"There is some problem on server side. Please try again", error:error})
     }
 });
 
